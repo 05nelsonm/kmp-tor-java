@@ -32,7 +32,7 @@ public class Tor {
         Platform platform = Platform.getCurrent();
         String arch = System.getProperty("os.arch");
         PlatformInstaller installer;
-        PlatformInstaller.InstallOption installOption = PlatformInstaller.InstallOption.CleanInstallIfMissing;
+        PlatformInstaller.InstallOption installOption = PlatformInstaller.InstallOption.CleanInstallOnEachStart;
 
         if(platform == Platform.OSX) {
             if(arch.equals("aarch64")) {
