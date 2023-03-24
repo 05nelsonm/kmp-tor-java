@@ -44,9 +44,10 @@ dependencies {
     if(kmpOs == "linux" && kmpArch == "arm64") {
         implementation("com.sparrowwallet.kmp-tor-binary:kmp-tor-binary-$kmpOs$kmpArch-jvm:$vTor")
     } else {
-        implementation("io.matthewnelson.kotlin-components:kmp-tor-binary-$kmpOs$kmpArch:$vTor")
+        implementation("io.matthewnelson.kotlin-components:kmp-tor-binary-$kmpOs$kmpArch:4.7.13-4.1-SNAPSHOT")
     }
-    implementation("io.matthewnelson.kotlin-components:kmp-tor-binary-extract:$vTor")
+    implementation("io.matthewnelson.kotlin-components:kmp-tor-binary-extract:4.7.13-4.1-SNAPSHOT")
+    implementation("io.matthewnelson.kotlin-components:kmp-tor-binary-geoip:4.7.13-4.1-SNAPSHOT")
     implementation("io.matthewnelson.kotlin-components:kmp-tor-ext-callback-manager:$vKmpTor")
 
     implementation('org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.6.4')
@@ -92,12 +93,12 @@ extraJavaModuleInfo {
             exports("kmptor.$kmpOs.$kmpArch")
         }
     } else {
-        module("kmp-tor-binary-$kmpOs$kmpArch-jvm-${vTor}.jar", "kmp.tor.binary.$kmpOs$kmpArch", "$vTor") {
+        module("kmp-tor-binary-$kmpOs$kmpArch-jvm-4.7.13-4.1-SNAPSHOT.jar", "kmp.tor.binary.$kmpOs$kmpArch", "4.7.13-4.1-SNAPSHOT") {
             exports("io.matthewnelson.kmp.tor.binary.$kmpOs.$kmpArch")
             exports("kmptor.$kmpOs.$kmpArch")
         }
     }
-    module("kmp-tor-binary-extract-jvm-${vTor}.jar", 'kmp.tor.binary.extract.jvm', "$vTor") {
+    module("kmp-tor-binary-extract-jvm-4.7.13-4.1-SNAPSHOT.jar", 'kmp.tor.binary.extract.jvm', "4.7.13-4.1-SNAPSHOT") {
         exports('io.matthewnelson.kmp.tor.binary.extract')
         exports('io.matthewnelson.kmp.tor.binary.extract.internal')
         requires('kotlin.stdlib')
@@ -170,7 +171,7 @@ extraJavaModuleInfo {
         exports('io.matthewnelson.kmp.tor.ext.callback.controller.common.control')
         exports('io.matthewnelson.kmp.tor.ext.callback.controller.common.control.usecase')
     }
-    module("kmp-tor-binary-geoip-jvm-${vTor}.jar", 'kmp.tor.binary.geoip.jvm', "${vTor}") {
+    module("kmp-tor-binary-geoip-jvm-4.7.13-4.1-SNAPSHOT.jar", 'kmp.tor.binary.geoip.jvm', "4.7.13-4.1-SNAPSHOT") {
         exports('io.matthewnelson.kmp.tor.binary.geoip')
         exports('kmptor')
     }
