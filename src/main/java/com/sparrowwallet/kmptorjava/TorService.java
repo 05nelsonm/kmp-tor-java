@@ -46,8 +46,8 @@ public class TorService extends Service<Tor> {
                         }
                     });
                     callbackTorManager.start(throwable -> {
-                        if(throwable instanceof Exception exception) {
-                            startupException = exception;
+                        if(throwable instanceof Exception) {
+                            startupException = (Exception) throwable;
                         } else {
                             startupException = new Exception(throwable);
                         }
